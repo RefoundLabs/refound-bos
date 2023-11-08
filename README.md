@@ -1,9 +1,7 @@
-# NEAR Discovery (BOS) - 💧 GenaDrop
-
-This repo is the Blockchain Operating System version of GenaDrop only on NEAR
+# NEAR Discovery (BOS) - 💧 Refound 2.0
+This repo is the Blockchain Operating System version of Refound only on NEAR
 
 ## Setup & Development
-
 Initialize repo:
 ```
 yarn
@@ -15,7 +13,6 @@ yarn start
 ```
 
 ## Component example
-
 Profile view 
 
 ```jsx
