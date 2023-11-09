@@ -71,7 +71,7 @@ return (
     )}
     {(!projects || !projects.length) && (
       <div className="text-center row">
-        <div className="col">
+        <div className="col w-50">
           <Widget
           src="/*__@appAccount__*//widget/project.form"
             props={{
@@ -79,10 +79,10 @@ return (
             }}
           />
         </div>
-        <div className="col">
+        <div className="col w-50">
           <img
             src="https://bafybeibfzyfyudqfn6equrqbscrdizhki6lzyhqeq7pqpwxczjcrp47lfe.ipfs.w3s.link/campaignImage.png"
-            style={{ borderRadius: "84px", height: "75vh", width: auto }}
+            style={{ borderRadius: "84px", width:"80%", height: auto }}
           ></img>
         </div>
       </div>

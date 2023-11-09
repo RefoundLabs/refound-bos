@@ -47,11 +47,6 @@ return (
   <div className="p-4 bg-white rounded-4 row">
     <div className="d-flex flex-column gap-3 col">
       <h3>{buttonChildren}</h3>
-      {/* <label>I want to</label>
-      <select type="dropdown">
-        <option>Raise funds for a Journalist</option>
-        <option>Commission a Journalist</option>
-      </select> */}
       <Widget
         src={IS}
         props={{
