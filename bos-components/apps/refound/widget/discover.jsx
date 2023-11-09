@@ -149,7 +149,7 @@ if (!state.registeredPosts) {
           return formatted;
         });
         State.update({
-          registeredPosts: formattedPosts.filter((p) => p.seriesId !== 0 && p.seriesId !== 1) && p.seriesId !== 4,
+          registeredPosts: formattedPosts.filter((p) => p.seriesId !== 0 && p.seriesId !== 1 && p.seriesId !== 4) ,
         });
       });
 }
