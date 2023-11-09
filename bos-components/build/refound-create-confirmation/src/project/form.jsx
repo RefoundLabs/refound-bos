@@ -11,7 +11,6 @@ const UUID = {
   },
 };
 
-
 const { handleCreateProject, defaultProject, buttonChildren, buttonProps } =
   props;
 
@@ -50,13 +49,13 @@ return (
       {state.project.image && (
         <img src={state.project.image} alt="" height={100} width={100} />
       )}
-    <Widget
-      src={SI}
-      props={{
-        onChange: (v) => updateP("image", v),
-        value: state.project.image,
-      }}
-    />
+      <Widget
+        src={SI}
+        props={{
+          onChange: (v) => updateP("image", v),
+          value: state.project.image,
+        }}
+      />
 
       <Widget
         src={IT}
@@ -143,25 +142,25 @@ return (
       <div className="row">
         <div className="col">
           <Widget
-          src={IB}
-          props={{
-            children: buttonChildren ?? "Cancel",
-            variant: "alert",
-            onClick: () => beforeHandleCreateProject(),
-          }}
-        />
+            src={IB}
+            props={{
+              children: buttonChildren ?? "Cancel",
+              variant: "alert",
+              onClick: () => beforeHandleCreateProject(),
+            }}
+          />
+        </div>
+        <div className="col">
+          <Widget
+            src={IB}
+            props={{
+              children: buttonChildren ?? "Create Project",
+              variant: "success",
+              onClick: () => beforeHandleCreateProject(),
+            }}
+          />
+        </div>
       </div>
-      <div className="col">
-        <Widget
-          src={IB}
-          props={{
-            children: buttonChildren ?? "Create Project",
-            variant: "success",
-            onClick: () => beforeHandleCreateProject(),
-          }}
-        />
-      </div>
-    </div>
     </div>
   </div>
 );

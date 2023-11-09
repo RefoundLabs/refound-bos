@@ -64,7 +64,6 @@ function renderProject({ title, tags, logo, id }) {
   );
 }
 
-
 const widget = (src, props, other) => (
   <Widget src={src} props={props} {...other} />
 );
@@ -80,108 +79,213 @@ const Projects = styled.div`
 
 // projects = null;
 return (
-  <div style={{backgroundColor:"#F7F3D4", color:"#2F2F2F", minHeight:'100vh'}}>
-    {(
+  <div
+    style={{ backgroundColor: "#F7F3D4", color: "#2F2F2F", minHeight: "100vh" }}
+  >
+    {
       <>
-      <div className="text-center row p-5">
-        <div>
-          <h2 style={{ fontFamily: "Cormorant", fontSize:"3em", marginTop:"25%", fontWeight:"300"}}>
-           features
-          </h2>
-          <h1 style={{ fontFamily: "Cormorant", fontSize:"4em", fontWeight:"600"}}>
-           Bravery in Focus
-          </h1>
-          <p style={{color:"#70675C"}}>where fearlessness and artistry converge in every frame</p>
-        </div>        
-      </div>
+        <div className="text-center row p-5">
+          <div>
+            <h2
+              style={{
+                fontFamily: "Cormorant",
+                fontSize: "3em",
+                marginTop: "25%",
+                fontWeight: "300",
+              }}
+            >
+              features
+            </h2>
+            <h1
+              style={{
+                fontFamily: "Cormorant",
+                fontSize: "4em",
+                fontWeight: "600",
+              }}
+            >
+              Bravery in Focus
+            </h1>
+            <p style={{ color: "#70675C" }}>
+              where fearlessness and artistry converge in every frame
+            </p>
+          </div>
+        </div>
 
-      <div className="text-left row" style={{paddingTop:"25%"}}>
-        <div className="col">
-          <div style={{padding:"20px"}}>
-              <h3 style={{fontFamily:"Cormorant", fontWeight:"700"}}>Simplified Publishing</h3>
+        <div className="text-left row" style={{ paddingTop: "25%" }}>
+          <div className="col">
+            <div style={{ padding: "20px" }}>
+              <h3 style={{ fontFamily: "Cormorant", fontWeight: "700" }}>
+                Simplified Publishing
+              </h3>
               <br></br>
-              <p style={{fontWeight:"400", fontSize:"14px"}}>To capture live photos for NFTs. This helps store the meta data of time and place directly on the blockchain on IPFS and helping viewers and newsrooms know that the image is not altered or doctored.</p>
+              <p style={{ fontWeight: "400", fontSize: "14px" }}>
+                To capture live photos for NFTs. This helps store the meta data
+                of time and place directly on the blockchain on IPFS and helping
+                viewers and newsrooms know that the image is not altered or
+                doctored.
+              </p>
+            </div>
           </div>
-        </div>
-        <div className="col">
-          <div style={{padding:"20px"}}>
-            <h3 style={{fontFamily:"Cormorant", fontWeight:"700"}}>Automated Licensing</h3>
-            <br></br>
-            <p style={{fontWeight:"400"}}>Licenses are stored on chain and our smart contracts allow NFT minters to purchase multiple licenses for different uses.</p>
-          </div>
-        </div>
-        <div className="col">
-          <br></br>
-          <div style={{padding:"20px"}}>
-            <h3 style={{fontFamily:"Cormorant", fontWeight:"700"}}>Revenue Sharing</h3>
-            <br></br>
-            <p style={{fontWeight:"400"}}>Journalists can share revenue from their photos and articles with those impacted by conflict. The smart contract will split the royalties between the journalist and the NGO or to the person photographed.</p>
-          </div>
-        </div>
-      </div>
-
-      <div className="text-left row" style={{paddingTop:"2%"}}>
-        <div className="col">
-          <div style={{padding:"20px"}}>
-              <h3 style={{fontFamily:"Cormorant", fontWeight:"700"}}>In app camera capability</h3>
+          <div className="col">
+            <div style={{ padding: "20px" }}>
+              <h3 style={{ fontFamily: "Cormorant", fontWeight: "700" }}>
+                Automated Licensing
+              </h3>
               <br></br>
-              <p style={{fontWeight:"400", fontSize:"14px"}}>We allow Journalists to swiftly create and sell NFTs of their content directly to news rooms, the media, and the public.</p>
+              <p style={{ fontWeight: "400" }}>
+                Licenses are stored on chain and our smart contracts allow NFT
+                minters to purchase multiple licenses for different uses.
+              </p>
+            </div>
           </div>
-        </div>
-        <div className="col">
-          <div style={{padding:"20px"}}>
-            <h3 style={{fontFamily:"Cormorant", fontWeight:"700"}}>Cryptocurrency Benefits</h3>
+          <div className="col">
             <br></br>
-            <p style={{fontWeight:"400"}}>Ease of payment to journalists and their local sources, fixers, and contacts in war zones and conflict zones via stable coin using a an easy setup crypto wallet on Near. Cryptocurrency provides a transfer of value that is much faster than banks, and much cheaper even in cases of international transfers. Account transactions are publicly auditable and secure, and easily accessible with a smartphone.</p>
-          </div>
-        </div>
-        <div className="col">
-          <br></br>
-          <div style={{padding:"20px"}}>
-            <h3 style={{fontFamily:"Cormorant", fontWeight:"700"}}>Proof of Witness</h3>
-            <br></br>
-            <p style={{fontWeight:"400"}}>When an NFT is created, it has to pass through our smart contract and it requires Third Party Verification in order for it to be validated as true and confirmed for minting. Allows a multisig wallet sign-in to allow a local NGO, a local governing body, and up to 2 eye witnesses to authenticate the veracity (verification) of the photo or article content.</p>
-          </div>
-        </div>
-      </div>
-
-      <div className="text-left row" style={{paddingTop:"2%"}}>
-        <div className="col">
-          <div style={{padding:"20px"}}>
-              <h3 style={{fontFamily:"Cormorant", fontWeight:"700"}}>Easy one click on-boarding on NEAR using Keypom</h3>
+            <div style={{ padding: "20px" }}>
+              <h3 style={{ fontFamily: "Cormorant", fontWeight: "700" }}>
+                Revenue Sharing
+              </h3>
               <br></br>
-              <p style={{fontWeight:"400", fontSize:"14px"}}>Only NEAR allows the creation of programmable keys, which they call “keypoms.” These keys allow users to start using our dApp right away without needing to create an account.</p>
+              <p style={{ fontWeight: "400" }}>
+                Journalists can share revenue from their photos and articles
+                with those impacted by conflict. The smart contract will split
+                the royalties between the journalist and the NGO or to the
+                person photographed.
+              </p>
+            </div>
           </div>
         </div>
-        <div className="col">
-          <div style={{padding:"20px"}}>
-            <h3 style={{fontFamily:"Cormorant", fontWeight:"700"}}>Publicly Visible Chain of Approvals</h3>
-            <br></br>
-            <p style={{fontWeight:"400"}}>On chain data is public and transparent, displaying the verifying parties that were involved in verification.</p>
-          </div>
-        </div>
-        <div className="col">
-          <br></br>
-          <div style={{padding:"20px"}}>
-            <h3 style={{fontFamily:"Cormorant", fontWeight:"700"}}>Immutable and Decentralized</h3>
-            <br></br>
-            <p style={{fontWeight:"400"}}>The immutability of the blockchain allows the journalists to post content that is wrapped in utility NFTs and reducing the risk of censorship and later modification of their original works, since the blockchain will always have a record of the original photograph or article when it was uploaded by the journalist.</p>
-          </div>
-        </div>
-      </div>
 
+        <div className="text-left row" style={{ paddingTop: "2%" }}>
+          <div className="col">
+            <div style={{ padding: "20px" }}>
+              <h3 style={{ fontFamily: "Cormorant", fontWeight: "700" }}>
+                In app camera capability
+              </h3>
+              <br></br>
+              <p style={{ fontWeight: "400", fontSize: "14px" }}>
+                We allow Journalists to swiftly create and sell NFTs of their
+                content directly to news rooms, the media, and the public.
+              </p>
+            </div>
+          </div>
+          <div className="col">
+            <div style={{ padding: "20px" }}>
+              <h3 style={{ fontFamily: "Cormorant", fontWeight: "700" }}>
+                Cryptocurrency Benefits
+              </h3>
+              <br></br>
+              <p style={{ fontWeight: "400" }}>
+                Ease of payment to journalists and their local sources, fixers,
+                and contacts in war zones and conflict zones via stable coin
+                using a an easy setup crypto wallet on Near. Cryptocurrency
+                provides a transfer of value that is much faster than banks, and
+                much cheaper even in cases of international transfers. Account
+                transactions are publicly auditable and secure, and easily
+                accessible with a smartphone.
+              </p>
+            </div>
+          </div>
+          <div className="col">
+            <br></br>
+            <div style={{ padding: "20px" }}>
+              <h3 style={{ fontFamily: "Cormorant", fontWeight: "700" }}>
+                Proof of Witness
+              </h3>
+              <br></br>
+              <p style={{ fontWeight: "400" }}>
+                When an NFT is created, it has to pass through our smart
+                contract and it requires Third Party Verification in order for
+                it to be validated as true and confirmed for minting. Allows a
+                multisig wallet sign-in to allow a local NGO, a local governing
+                body, and up to 2 eye witnesses to authenticate the veracity
+                (verification) of the photo or article content.
+              </p>
+            </div>
+          </div>
+        </div>
 
-      <div className="row text-center">
-      <div className="col p-5">
-           <button style={{backgroundColor:"#826C53", borderColor:"#826C53", borderRadius:"39.5px"}}>Explore Campaigns</button>
+        <div className="text-left row" style={{ paddingTop: "2%" }}>
+          <div className="col">
+            <div style={{ padding: "20px" }}>
+              <h3 style={{ fontFamily: "Cormorant", fontWeight: "700" }}>
+                Easy one click on-boarding on NEAR using Keypom
+              </h3>
+              <br></br>
+              <p style={{ fontWeight: "400", fontSize: "14px" }}>
+                Only NEAR allows the creation of programmable keys, which they
+                call “keypoms.” These keys allow users to start using our dApp
+                right away without needing to create an account.
+              </p>
+            </div>
+          </div>
+          <div className="col">
+            <div style={{ padding: "20px" }}>
+              <h3 style={{ fontFamily: "Cormorant", fontWeight: "700" }}>
+                Publicly Visible Chain of Approvals
+              </h3>
+              <br></br>
+              <p style={{ fontWeight: "400" }}>
+                On chain data is public and transparent, displaying the
+                verifying parties that were involved in verification.
+              </p>
+            </div>
+          </div>
+          <div className="col">
+            <br></br>
+            <div style={{ padding: "20px" }}>
+              <h3 style={{ fontFamily: "Cormorant", fontWeight: "700" }}>
+                Immutable and Decentralized
+              </h3>
+              <br></br>
+              <p style={{ fontWeight: "400" }}>
+                The immutability of the blockchain allows the journalists to
+                post content that is wrapped in utility NFTs and reducing the
+                risk of censorship and later modification of their original
+                works, since the blockchain will always have a record of the
+                original photograph or article when it was uploaded by the
+                journalist.
+              </p>
+            </div>
+          </div>
         </div>
-        <div className="col p-5">
-           <button style={{backgroundColor:"#5D8959", borderColor:"#5D8959", borderRadius:"39.5px"}}>This Way <svg xmlns="http://www.w3.org/2000/svg" width="55" height="34" viewBox="0 0 99 34" fill="none">
-            <path d="M98.1574 18.4987C99.0379 17.6181 99.0379 16.1905 98.1574 15.3099L83.808 0.960511C82.9274 0.0799599 81.4998 0.0799599 80.6192 0.960511C79.7387 1.84106 79.7387 3.26872 80.6192 4.14927L93.3743 16.9043L80.6192 29.6593C79.7387 30.5399 79.7387 31.9675 80.6192 32.8481C81.4998 33.7286 82.9274 33.7286 83.808 32.8481L98.1574 18.4987ZM0.0998535 19.1591H96.563V14.6495H0.0998535V19.1591Z" fill="#FF8B00"/>
-            </svg></button>
+
+        <div className="row text-center">
+          <div className="col p-5">
+            <button
+              style={{
+                backgroundColor: "#826C53",
+                borderColor: "#826C53",
+                borderRadius: "39.5px",
+              }}
+            >
+              Explore Campaigns
+            </button>
+          </div>
+          <div className="col p-5">
+            <button
+              style={{
+                backgroundColor: "#5D8959",
+                borderColor: "#5D8959",
+                borderRadius: "39.5px",
+              }}
+            >
+              This Way{" "}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="55"
+                height="34"
+                viewBox="0 0 99 34"
+                fill="none"
+              >
+                <path
+                  d="M98.1574 18.4987C99.0379 17.6181 99.0379 16.1905 98.1574 15.3099L83.808 0.960511C82.9274 0.0799599 81.4998 0.0799599 80.6192 0.960511C79.7387 1.84106 79.7387 3.26872 80.6192 4.14927L93.3743 16.9043L80.6192 29.6593C79.7387 30.5399 79.7387 31.9675 80.6192 32.8481C81.4998 33.7286 82.9274 33.7286 83.808 32.8481L98.1574 18.4987ZM0.0998535 19.1591H96.563V14.6495H0.0998535V19.1591Z"
+                  fill="#FF8B00"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
-      </div>
       </>
-    )}
+    }
   </div>
 );

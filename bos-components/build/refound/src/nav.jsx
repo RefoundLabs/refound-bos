@@ -229,7 +229,9 @@ const Modal = ({ isOpen, onClose, children }) => {
 
   return (
     <CartModal onClick={onClose}>
-      <CartModalContent onClick={(e) => e.stopPropagation()}>{children}</CartModalContent>
+      <CartModalContent onClick={(e) => e.stopPropagation()}>
+        {children}
+      </CartModalContent>
     </CartModal>
   );
 };
@@ -282,7 +284,10 @@ return (
         </NavTab>
       </NavRightMobile>
     </Nav>
-    <Modal isOpen={props.isCartModalOpen} onClose={() => props.setIsCartModalOpen(false)}>
+    <Modal
+      isOpen={props.isCartModalOpen}
+      onClose={() => props.setIsCartModalOpen(false)}
+    >
       {/* <div>hi</div> */}
       <ModalHeader>
         <ModalHeaderText>Donation cart</ModalHeaderText>
@@ -333,7 +338,8 @@ return (
         <Widget
           src={`${ownerId}/widget/Buttons.ActionButton`}
           props={{
-            type: Object.keys(props.cart).length === 0 ? "primary" : "secondary",
+            type:
+              Object.keys(props.cart).length === 0 ? "primary" : "secondary",
             text: "Continue shopping",
             onClick: () => props.setIsCartModalOpen(false),
             style: {

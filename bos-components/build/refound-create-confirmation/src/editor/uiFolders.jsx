@@ -26,7 +26,6 @@ const Url = {
   },
 };
 
-
 // TODO: should be able to hide/show children elements
 
 const { project: projectId, navigate } = props;
@@ -200,10 +199,13 @@ const renderProject = (project) => {
           onClick={() => {
             navigate("manage", { project: projectId });
           }}
-          href={Url.construct("#/refound-create-confirmation.near/widget/home", {
-            page: "manage",
-            project: projectId,
-          })}
+          href={Url.construct(
+            "#/refound-create-confirmation.near/widget/home",
+            {
+              page: "manage",
+              project: projectId,
+            },
+          )}
         >
           <i className="bi bi-gear"></i>
           <span className="ms-1">Settings</span>

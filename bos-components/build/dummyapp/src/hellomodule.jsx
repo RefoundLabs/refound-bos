@@ -4,5 +4,4 @@ const hello = () => {
   return "Hello!";
 };
 
-
 return <>{hello()}</>;

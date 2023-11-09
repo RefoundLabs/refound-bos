@@ -100,7 +100,7 @@ return (
       <div className="text-center row">
         <div className="col w-50">
           <Widget
-          src="refound-create-campaign.near/widget/project.form"
+            src="refound-create-campaign.near/widget/project.form"
             props={{
               handleCreateProject,
             }}
@@ -109,7 +109,7 @@ return (
         <div className="col w-50">
           <img
             src="https://bafybeibfzyfyudqfn6equrqbscrdizhki6lzyhqeq7pqpwxczjcrp47lfe.ipfs.w3s.link/campaignImage.png"
-            style={{ borderRadius: "84px", width:"80%", height: auto }}
+            style={{ borderRadius: "84px", width: "80%", height: auto }}
           ></img>
         </div>
       </div>

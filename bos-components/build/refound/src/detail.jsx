@@ -1,14 +1,16 @@
 const ownerId = "potlock.near";
 const registryId = "refoundjournalism.near";
 
-const series = Near.view(registryId, "get_series_details", {id: props.seriesId || 0});
+const series = Near.view(registryId, "get_series_details", {
+  id: props.seriesId || 0,
+});
 
 if (!series) {
   return "Loading";
 }
 
-const title = series && series.metadata.title || "Untitled";
-const description = series && series.metadata.description || ""
+const title = (series && series.metadata.title) || "Untitled";
+const description = (series && series.metadata.description) || "";
 const image = series && series.metadata.media;
 const tags = series && Object.keys(series.metadata.tags ?? {});
 
@@ -45,19 +47,19 @@ const Container = styled.div`
 `;
 
 const BodyContainer = styled.div`
-flex: 1;
+  flex: 1;
 `;
 // these will be passed down to child components
 props.navOptions = [
-    {
-      label: "Home",
-      id: "home",
-      disabled: false,
-      source: `${ownerId}/widget/Project.About`,
-    },
-  ];
-  
-  if (!props.nav) props.nav = "home"; // default to home tab
+  {
+    label: "Home",
+    id: "home",
+    disabled: false,
+    source: `${ownerId}/widget/Project.About`,
+  },
+];
+
+if (!props.nav) props.nav = "home"; // default to home tab
 
 const imageHeightPx = 120;
 const profileImageTranslateYPx = 220;
@@ -65,7 +67,9 @@ const profileImageTranslateYPx = 220;
 return (
   <Wrapper>
     {!series ? (
-      <div style={{ textAlign: "center", paddingTop: "12px" }}>Post not found</div>
+      <div style={{ textAlign: "center", paddingTop: "12px" }}>
+        Post not found
+      </div>
     ) : (
       <>
         <Widget

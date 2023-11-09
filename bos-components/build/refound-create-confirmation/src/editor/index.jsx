@@ -8,7 +8,6 @@ const debounce = (func, delay) => {
   timeoutId = setTimeout(func, delay);
 };
 
-
 const { project: projectId, handle } = props;
 
 const path = handle["document"].getSelected(projectId);

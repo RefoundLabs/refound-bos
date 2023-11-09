@@ -68,7 +68,10 @@ function renderHeader({ handleCreateProject }) {
   return (
     <div className="d-flex gap-4 py-4">
       <h4>
-        Create a <span style={{ color: "#1193B0", display:"block" }}>Post or Event</span>
+        Create a{" "}
+        <span style={{ color: "#1193B0", display: "block" }}>
+          Post or Event
+        </span>
       </h4>
     </div>
   );
@@ -100,7 +103,7 @@ return (
       <div className="text-center row">
         <div className="col">
           <Widget
-          src="refound-create-post.near/widget/project.form"
+            src="refound-create-post.near/widget/project.form"
             props={{
               handleCreateProject,
             }}

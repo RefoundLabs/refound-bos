@@ -1,6 +1,6 @@
 const ownerId = "refound_app.near";
 const registryContractId = "refoundJournalism.near";
-const creator = "refound_app.near"
+const creator = "refound_app.near";
 const CREATE_POST_TAB = "createpost";
 const EDIT_POST_TAB = "editpost";
 const POSTS_LIST_TAB = "posts";
@@ -16,28 +16,35 @@ const Theme = styled.div`
     font-family: mona-sans;
     font-style: normal;
     font-weight: 400;
-    src: local("Mona-Sans"),
-      url(https://fonts.cdnfonts.com/s/91271/Mona-Sans-Regular.woff) format("woff");
+    src:
+      local("Mona-Sans"),
+      url(https://fonts.cdnfonts.com/s/91271/Mona-Sans-Regular.woff)
+        format("woff");
   }
   @font-face {
     font-family: mona-sans;
     font-style: normal;
     font-weight: 500;
-    src: local("Mona-Sans"),
-      url(https://fonts.cdnfonts.com/s/91271/Mona-Sans-Medium.woff) format("woff");
+    src:
+      local("Mona-Sans"),
+      url(https://fonts.cdnfonts.com/s/91271/Mona-Sans-Medium.woff)
+        format("woff");
   }
   @font-face {
     font-family: mona-sans;
     font-style: normal;
     font-weight: 600;
-    src: local("Mona-Sans"),
-      url(https://fonts.cdnfonts.com/s/91271/Mona-Sans-SemiBold.woff) format("woff");
+    src:
+      local("Mona-Sans"),
+      url(https://fonts.cdnfonts.com/s/91271/Mona-Sans-SemiBold.woff)
+        format("woff");
   }
   @font-face {
     font-family: mona-sans;
     font-style: normal;
     font-weight: 700;
-    src: local("Mona-Sans"),
+    src:
+      local("Mona-Sans"),
       url(https://fonts.cdnfonts.com/s/91271/Mona-Sans-Bold.woff) format("woff");
   }
 `;
@@ -49,21 +56,23 @@ State.init({
   seriesIsFetched: false,
   nearToUsd: useCache(
     () =>
-      asyncFetch("https://api.coingecko.com/api/v3/simple/price?ids=near&vs_currencies=usd").then(
-        (res) => {
-          console.log("congecko res body: ", res.body);
-          return res.body.near.usd;
-        }
-      ),
+      asyncFetch(
+        "https://api.coingecko.com/api/v3/simple/price?ids=near&vs_currencies=usd",
+      ).then((res) => {
+        console.log("congecko res body: ", res.body);
+        return res.body.near.usd;
+      }),
     "nearToUsd",
-    { subscribe: false }
+    { subscribe: false },
   ),
   isCartModalOpen: false,
   registryAdmins: null,
 });
 
 if (state.nearToUsd === null) {
-  const res = fetch("https://api.coingecko.com/api/v3/simple/price?ids=near&vs_currencies=usd");
+  const res = fetch(
+    "https://api.coingecko.com/api/v3/simple/price?ids=near&vs_currencies=usd",
+  );
   console.log("coingecko res: ", res);
   State.update({ nearToUsd: res.body.near.usd });
 }
@@ -165,7 +174,9 @@ if (props.tab === EDIT_POST_TAB) {
   props.edit = true;
 }
 
-const tabContent = <Widget src={`${ownerId}/widget/${getTabWidget(props.tab)}`} props={props} />;
+const tabContent = (
+  <Widget src={`${ownerId}/widget/${getTabWidget(props.tab)}`} props={props} />
+);
 
 const Content = styled.div`
   width: 100%;
@@ -193,4 +204,4 @@ return (
     <Widget src={`${creator}/widget/nav`} props={props} />
     <Content className={isForm ? "form" : ""}>{tabContent}</Content>
   </Theme>
-);  
+);

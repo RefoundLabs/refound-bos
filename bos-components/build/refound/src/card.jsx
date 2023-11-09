@@ -81,18 +81,25 @@ const series = props.post;
 //   return "Loading";
 // }
 
-console.log("series", series)
+//console.log("series", series)
 
-const title = series && series.title || "Untitled";
-const description = series && series.description || ""
-const image = series.media ||  "https://ipfs.near.social/ipfs/bafkreibmiy4ozblcgv3fm3gc6q62s55em33vconbavfd2ekkuliznaq3zm";
+const title = (series && series.title) || "Untitled";
+const description = (series && series.description) || "";
+let image =
+  series.media ||
+  "https://ipfs.near.social/ipfs/bafkreibmiy4ozblcgv3fm3gc6q62s55em33vconbavfd2ekkuliznaq3zm";
+
 const tags = series && Object.keys(series.tags ?? {});
 const dateTaken = series.dateTaken;
 const location = series.location;
-console.log("media", image)
-const donationsForProject = Near.view(donationContractId, "get_total_donations", {
-  recipient_id: id,
-});
+//console.log("media", image)
+const donationsForProject = Near.view(
+  donationContractId,
+  "get_total_donations",
+  {
+    recipient_id: id,
+  },
+);
 
 const [totalAmount, totalDonors] = useMemo(() => {
   if (!donationsForProject) return [null, null];
@@ -102,7 +109,9 @@ const [totalAmount, totalDonors] = useMemo(() => {
     if (!donors.includes(donation.donor_id)) {
       donors.push(donation.donor_id);
     }
-    totalDonationAmount = totalDonationAmount.plus(new Big(donation.total_amount));
+    totalDonationAmount = totalDonationAmount.plus(
+      new Big(donation.total_amount),
+    );
   }
   return [
     props.nearToUsd
@@ -121,18 +130,50 @@ const PROJECT_STATUSES = [
   "Blacklisted",
 ];
 
+// const getLinks = async (str) => {
+// 	try {
+// 		//const url = createGatewayUrl(cid, filePath);
+// 		console.log('get image and audio', str);
+// 		const ipfsPath = str.replace(".ipfs.w3s.link", "").replace("https://", "").split("/")[0];
+// 		console.log(ipfsPath);
+
+// 		const data = asyncFetch("https://dweb.link/api/v0/ls?arg=" + ipfsPath)
+// 			.then((response) => {
+//         console.log('ipfs links');
+//         console.log(response.body)
+// 		    console.log(response.body.Objects[0].Links);
+
+//       Object.values(response.body.Objects[0].Links).forEach((item) => {
+//         console.log('item', item);
+//           if(item.Name.includes('.jpg') || item.Name.includes('.jpeg') || item.Name.includes('.png')){
+//              console.log("https://" + item.Hash + ".ipfs.w3s.link/" + item.Name);
+//             State.update({ipfsLink: "https://" + item.Hash + ".ipfs.w3s.link/" + item.Name})
+//           }
+//         });
+
+//       })
+// 			.catch((err) => {
+// 				throw err;
+// 			});
+
+// 	} catch (err) {
+// 		return null;
+// 	}
+// };
+
+// if(state.ipfsLink == undefined || state.ipfsLink == null){
+//   getLinks(image);
+// }
+
 return (
   <>
     <Card href={`?tab=post&seriesId=${id}`} key={id}>
-   
-    
       <Info>
-       <img
+        <img
           className={className}
           style={style}
           src={image}
           alt={"post image"}
-
         />
         <Title>{title}</Title>
         <SubTitle>
@@ -147,12 +188,12 @@ return (
             tags,
           }}
         />
-         <DonationsInfoItem>
+        <DonationsInfoItem>
           <Title>Date Taken</Title>
           <SubTitle>{dateTaken}</SubTitle>
         </DonationsInfoItem>
         <DonationsInfoItem>
-        <Title>Location</Title>
+          <Title>Location</Title>
           <SubTitle>{location}</SubTitle>
         </DonationsInfoItem>
       </Info>
@@ -162,7 +203,9 @@ return (
           <SubTitle>{totalDonors === 1 ? "Donor" : "Donors"}</SubTitle>
         </DonationsInfoItem>
         <DonationsInfoItem>
-          <Title>{props.nearToUsd ? `$${totalAmount}` : `${totalAmount} N`}</Title>
+          <Title>
+            {props.nearToUsd ? `$${totalAmount}` : `${totalAmount} N`}
+          </Title>
           <SubTitle>Raised</SubTitle>
         </DonationsInfoItem>
       </DonationsInfoContainer>

@@ -80,7 +80,7 @@ const ModalOverlay = styled.div`
   flex-direction: column;
   @media (max-width: 510px) {
     right: 0;
-    padding:0;
+    padding: 0;
     width: 100%;
   }
 `;
@@ -89,12 +89,12 @@ const Component = styled.div`
   height: 100%;
   overflow: auto;
   border-radius: 6px;
-  background-color: #22272B;
+  background-color: #22272b;
   border: 1px solid rgb(255, 255, 255);
 `;
 
 const ModalContent = styled.div`
-  gap:15px;
+  gap: 15px;
   width: 100%;
   color: white;
   display: flex;
@@ -111,7 +111,7 @@ const ModalAction = styled.div`
 
 const ModalTitle = styled.h4`
   font-size: 16px;
-  font-weight : bold;
+  font-weight: bold;
   margin-bottom: 10px;
 `;
 
@@ -120,8 +120,8 @@ const Button = styled.button`
   border-radius: 6px;
   padding: 10px 22px;
   padding: 6px 17px;
-  margin-bottom : 5px;
-  background-color:white;
+  margin-bottom: 5px;
+  background-color: white;
   &:hover {
     background-color: grey;
     color: #191a1a;
@@ -213,35 +213,35 @@ const saveMyProfile = () => {
 };
 
 const changeTitle = async (e) => {
-//   if (e.target.value.length <= 25)
-    State.update({
-      ...state,
-      title: e.target.value,
-    });
+  //   if (e.target.value.length <= 25)
+  State.update({
+    ...state,
+    title: e.target.value,
+  });
 };
 
 const changeDescription = async (e) => {
-//   if (e.target.value.indexOf(SOCIAL) === 0)
-    State.update({
-      ...state,
-      description: e.target.value,
-    });
+  //   if (e.target.value.indexOf(SOCIAL) === 0)
+  State.update({
+    ...state,
+    description: e.target.value,
+  });
 };
 
 const changedateTaken = async (e) => {
-//   if (e.target.value.indexOf(TWITTER) === 0)
-    State.update({
-      ...state,
-      dateTaken: e.target.value,
-    });
+  //   if (e.target.value.indexOf(TWITTER) === 0)
+  State.update({
+    ...state,
+    dateTaken: e.target.value,
+  });
 };
 
 const changeTags = async (e) => {
-//   if (e.target.value.length <= 50)
-    State.update({
-      ...state,
-      tags: e.target.value,
-    });
+  //   if (e.target.value.length <= 50)
+  State.update({
+    ...state,
+    tags: e.target.value,
+  });
 };
 
 const changePrice = async (e) => {
@@ -275,9 +275,7 @@ return (
         </CloseButton>
         <ModalTitle>{`Create`}</ModalTitle>
         <div>
-          <p
-            style={{ marginBottom: 8, fontSize: 14 }}
-          >{`Type `}</p>
+          <p style={{ marginBottom: 8, fontSize: 14 }}>{`Type `}</p>
           <div className="d-flex">
             {state.types.map((item) => (
               <TypeButton
@@ -433,13 +431,13 @@ return (
             ))}
           </div>
         </div>
-          <p style={{ marginBottom: 8, fontSize: 14 }}>{`Title`}</p>
-          <TextField
-            type="text"
-            value={state.title}
-            onChange={changeTitle}
-            placeholder={accountId}
-          />
+        <p style={{ marginBottom: 8, fontSize: 14 }}>{`Title`}</p>
+        <TextField
+          type="text"
+          value={state.title}
+          onChange={changeTitle}
+          placeholder={accountId}
+        />
         <div>
           <p style={{ marginBottom: 8, fontSize: 14 }}>{`Description`}</p>
           <Textarea
@@ -458,7 +456,6 @@ return (
             onChange={changedateTaken}
           />
         </div>
-
       </ModalContent>
       <ModalAction>
         <Button className="btn" onClick={saveMyProfile}>{`Save`}</Button>

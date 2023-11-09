@@ -1,5 +1,5 @@
 const ownerId = "potlock.near";
-const creator = "refound_app.near"
+const creator = "refound_app.near";
 const registryId = "refoundjournalism.near";
 
 const IPFS_BASE_URL = "https://nftstorage.link/ipfs/";
@@ -10,7 +10,7 @@ const DEFAULT_PROFILE_IMAGE_URL =
 const HERO_BACKGROUND_IMAGE_URL =
   IPFS_BASE_URL + "bafkreiewg5afxbkvo6jbn6jgv7zm4mtoys22jut65fldqtt7wagar4wbga";
 
-  const API_URL = "https://humans.nearverselabs.com/api";
+const API_URL = "https://humans.nearverselabs.com/api";
 const MAP_STYLE = "mapbox://styles/mapbox/dark-v10";
 const MAP_TOKEN =
   "pk.eyJ1IjoidGVqMDEiLCJhIjoiY2xqcHZ2dGpkMDB5azNsbzQ0bmMwNjRjaCJ9.FVv2zRPaLwzZMgagbI2YZw";
@@ -84,7 +84,7 @@ const HeroContainer = styled.div`
   position: relative;
 `;
 const Wrapper = styled.div`
-display: flex;
+  display: flex;
   width: 100%;
   height: calc(100vh - 300px);
   align-items: stretch;
@@ -92,7 +92,7 @@ display: flex;
   background: black;
   overflow: auto;
   position: relative;
-  `
+`;
 const Hero = styled.img`
   width: 100%;
   height: 100%;
@@ -119,53 +119,51 @@ const CATEGORY_MAPPINGS = {
 // const HIDDEN_PROJECT_IDS = ["roshaan.near"];
 
 if (!state.registeredPosts) {
-  Near.asyncView(registryId, "get_series", {})
-    .then((posts) => {
-        const formattedPosts = posts.map((series) => {
-        
-          // let profileImageUrl = DEFAULT_PROFILE_IMAGE_URL;
-          // if (profileData.image) {
-          //   const imageUrl = getImageUrlFromSocialImage(profileData.image);
-          //   if (imageUrl) profileImageUrl = imageUrl;
-          // }
-          // // get banner image URL
-          // let bannerImageUrl = DEFAULT_BANNER_IMAGE_URL;
-          // if (profileData.backgroundImage) {
-          //   const imageUrl = getImageUrlFromSocialImage(profileData.backgroundImage);
-          //   if (imageUrl) bannerImageUrl = imageUrl;
-          // }
-          const formatted = {
-            ownerId: series.owner_id,
-            title: series.metadata.title ?? "",
-            description: series.metadata.description ?? "",
-            media: series.metadata.media,
-            dateTaken: series.metadata.extra && JSON.parse(series.metadata.extra).dateTaken,
-            location: series.metadata.extra && JSON.parse(series.metadata.extra).locationTaken,
-            tags: series.metadata.tags || []
-          };
-          console.log("series omn discover", series)
-          return formatted;
-        });
-        State.update({
-          registeredPosts: formattedPosts,
-        });
-      });
+  Near.asyncView(registryId, "get_series", {}).then((posts) => {
+    const formattedPosts = posts.map((series) => {
+      // let profileImageUrl = DEFAULT_PROFILE_IMAGE_URL;
+      // if (profileData.image) {
+      //   const imageUrl = getImageUrlFromSocialImage(profileData.image);
+      //   if (imageUrl) profileImageUrl = imageUrl;
+      // }
+      // // get banner image URL
+      // let bannerImageUrl = DEFAULT_BANNER_IMAGE_URL;
+      // if (profileData.backgroundImage) {
+      //   const imageUrl = getImageUrlFromSocialImage(profileData.backgroundImage);
+      //   if (imageUrl) bannerImageUrl = imageUrl;
+      // }
+      const formatted = {
+        ownerId: series.owner_id,
+        title: series.metadata.title ?? "",
+        description: series.metadata.description ?? "",
+        media: series.metadata.media,
+        dateTaken:
+          series.metadata.extra && JSON.parse(series.metadata.extra).dateTaken,
+        location:
+          series.metadata.extra &&
+          JSON.parse(series.metadata.extra).locationTaken,
+        tags: series.metadata.tags || [],
+      };
+      console.log("series omn discover", series);
+      return formatted;
+    });
+    State.update({
+      registeredPosts: formattedPosts,
+    });
+  });
 }
 
 if (!state.registeredPosts) return "";
 
-const userIsAdmin = props.registryAdmins && props.registryAdmins.includes(context.accountId);
+const userIsAdmin =
+  props.registryAdmins && props.registryAdmins.includes(context.accountId);
 
 const projects = state.registeredPosts;
 
 return (
   <>
-  <Wrapper>
+    <Wrapper>{/* MAP */}</Wrapper>
 
-   {/* MAP */}
-
-</Wrapper>
-    
     <ProjectsContainer>
       <SectionHeader>
         <SectionTitle>All posts</SectionTitle>

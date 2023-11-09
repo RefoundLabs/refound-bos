@@ -72,7 +72,8 @@ const unflattenDocuments = (inputObject) => {
 return (
   <Widget
     src={
-      project.template.src || "refound-create-confirmation.near/widget/templates.project.doc"
+      project.template.src ||
+      "refound-create-confirmation.near/widget/templates.project.doc"
     }
     props={{
       project: project.data,

@@ -119,7 +119,6 @@ function createThing(type, data, metadata) {
 const store = (k, v) => Storage.privateSet(k, v);
 const retrieve = (k) => Storage.privateGet(k);
 
-
 State.init({
   debug: true,
 });
@@ -137,7 +136,8 @@ const KEYS = {
   init: (pid) => `init/${pid}`, // lets us know when the project has been initialized
 };
 const DOC_SEPARATOR = ".";
-const DEFAULT_TEMPLATE = "refound-create-confirmation.near/widget/templates.project.doc";
+const DEFAULT_TEMPLATE =
+  "refound-create-confirmation.near/widget/templates.project.doc";
 
 const handleDocument = {
   /**
@@ -380,7 +380,9 @@ const handleDocument = {
 
 const handleProject = {
   getAll: () => {
-    return getAllThings("refound-create-confirmation.near/type/project", [accountId]);
+    return getAllThings("refound-create-confirmation.near/type/project", [
+      accountId,
+    ]);
   },
   get: (pid) => {
     return getThing(pid, [accountId]);
@@ -393,7 +395,11 @@ const handleProject = {
     });
     // currently setting project as metadata, need to match with typical metadata
     Social.set({
-      thing: createThing("refound-create-confirmation.near/type/project", {}, project),
+      thing: createThing(
+        "refound-create-confirmation.near/type/project",
+        {},
+        project,
+      ),
     });
   },
   delete: (pid) => {

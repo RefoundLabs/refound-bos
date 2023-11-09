@@ -29,7 +29,6 @@ const Url = {
   },
 };
 
-
 State.init({
   page: props.page ?? "projects",
   project: props.project ?? null,
@@ -62,7 +61,10 @@ const activePage = pages.find((p) => p.active);
 
 const navigate = (v, params) => {
   State.update({ page: v, project: params?.project });
-  const url = Url.construct("#/refound-create-confirmation.near/widget/home", params);
+  const url = Url.construct(
+    "#/refound-create-confirmation.near/widget/home",
+    params,
+  );
   Storage.set("url", url);
 };
 
@@ -79,7 +81,8 @@ return (
               project,
               ...props,
               templates: {
-                Folders: "refound-create-confirmation.near/widget/editor.uiFolders",
+                Folders:
+                  "refound-create-confirmation.near/widget/editor.uiFolders",
               },
             }}
           />

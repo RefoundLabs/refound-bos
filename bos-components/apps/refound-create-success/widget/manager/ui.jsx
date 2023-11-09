@@ -56,16 +56,52 @@ return (
     {(!projects || !projects.length) && (
       <div className="text-left row">
         <div className="col">
-            <svg xmlns="http://www.w3.org/2000/svg" width="81" height="85" viewBox="0 0 81 85" fill="none" style={{marginTop:"30%", marginBottom:"5%"}}>
-              <path d="M44.6313 70.2105L57.4208 83L78.7366 61.6842" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M2 14.7895V40.3684C2 40.3684 2 53.1579 31.8421 53.1579C61.6842 53.1579 61.6842 40.3684 61.6842 40.3684V14.7895" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M31.8421 2C61.6842 2 61.6842 14.7895 61.6842 14.7895C61.6842 14.7895 61.6842 27.5789 31.8421 27.5789C2 27.5789 2 14.7895 2 14.7895C2 14.7895 2 2 31.8421 2Z" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M31.8421 78.7368C2 78.7368 2 65.9474 2 65.9474V40.3684" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="81"
+            height="85"
+            viewBox="0 0 81 85"
+            fill="none"
+            style={{ marginTop: "30%", marginBottom: "5%" }}
+          >
+            <path
+              d="M44.6313 70.2105L57.4208 83L78.7366 61.6842"
+              stroke="black"
+              stroke-width="4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M2 14.7895V40.3684C2 40.3684 2 53.1579 31.8421 53.1579C61.6842 53.1579 61.6842 40.3684 61.6842 40.3684V14.7895"
+              stroke="black"
+              stroke-width="4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M31.8421 2C61.6842 2 61.6842 14.7895 61.6842 14.7895C61.6842 14.7895 61.6842 27.5789 31.8421 27.5789C2 27.5789 2 14.7895 2 14.7895C2 14.7895 2 2 31.8421 2Z"
+              stroke="black"
+              stroke-width="4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M31.8421 78.7368C2 78.7368 2 65.9474 2 65.9474V40.3684"
+              stroke="black"
+              stroke-width="4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
           </svg>
           <h3>Thanks for submitting.</h3>
-          <p>Now your creation is handed off to be voted on by the community.</p>
+          <p>
+            Now your creation is handed off to be voted on by the community.
+          </p>
           <br></br>
-          <p>Explore other <a style={{textDecoration:"underline"}}>campaigns</a>.</p>
+          <p>
+            Explore other{" "}
+            <a style={{ textDecoration: "underline" }}>campaigns</a>.
+          </p>
         </div>
         <div className="col">
           <img

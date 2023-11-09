@@ -44,7 +44,10 @@ function renderHeader({ handleCreateProject }) {
   return (
     <div className="d-flex gap-4 py-4">
       <h4>
-        Create a <span style={{ color: "#1193B0", display:"block" }}>Post or Event</span>
+        Create a{" "}
+        <span style={{ color: "#1193B0", display: "block" }}>
+          Post or Event
+        </span>
       </h4>
     </div>
   );
@@ -73,7 +76,7 @@ return (
       <div className="text-center row">
         <div className="col">
           <Widget
-          src="/*__@appAccount__*//widget/project.form"
+            src="/*__@appAccount__*//widget/project.form"
             props={{
               handleCreateProject,
             }}
