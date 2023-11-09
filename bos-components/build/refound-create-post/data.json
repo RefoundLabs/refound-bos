@@ -1,0 +1,24 @@
+{
+  "type": {
+    "document": "{\"properties\":{\"title\":{\"type\":\"string\"},\"content\":{\"type\":\"md\",\"defaultValue\":\"\"},\"description\":{\"type\":\"string\"},\"coverImage\":{\"type\":\"string\"},\"tags\":{\"type\":\"array\",\"itemTypes\":[{\"type\":\"string\"}]}}}",
+    "project": "{\"properties\":{\"title\":{\"type\":\"string\"},\"description\":{\"type\":\"string\"},\"logo\":{\"type\":\"string\"},\"tags\":{\"type\":\"array\",\"itemTypes\":[{\"type\":\"string\"}]}}}"
+  },
+  "widget": {
+    "home": {
+      "metadata": {
+        "name": "Refound 3.0 on BOS",
+        "description": "",
+        "image": {
+          "ipfs_cid": ""
+        },
+        "tags": {
+          "app": "",
+          "docs": "",
+          "blog": "",
+          "website": "",
+          "markdown": ""
+        }
+      }
+    }
+  }
+}
