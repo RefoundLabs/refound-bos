@@ -164,7 +164,7 @@ return (
   <>
   <Wrapper>
 
-   {/* MAP */}
+  <img src="https://bafybeiatw7f5qy565cwkl43ctaonpzbbsmmjioleumsspkk3ajgk3u27h4.ipfs.w3s.link/map.png" alt="Map" />
 
 </Wrapper>
     
