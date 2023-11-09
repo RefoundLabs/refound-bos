@@ -38,7 +38,7 @@ const goTo = ({ doc }) => {
 };
 
 const href = ({ doc }) => {
-  return `#/neardearla.near/widget/p?id=${id}&by=${by}&doc=${doc}`;
+  return `#/refound_app.near/widget/p?id=${id}&by=${by}&doc=${doc}`;
 };
 
 const unflattenDocuments = (inputObject) => {
@@ -72,7 +72,7 @@ const unflattenDocuments = (inputObject) => {
 return (
   <Widget
     src={
-      project.template.src || "neardearla.near/widget/templates.project.doc"
+      project.template.src || "refound_app.near/widget/templates.project.doc"
     }
     props={{
       project: project.data,

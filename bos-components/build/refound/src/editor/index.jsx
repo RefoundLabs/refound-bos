@@ -140,7 +140,7 @@ return (
          * We can now swap out the editor below
          */}
         <Widget
-          src="neardearla.near/widget/editor.ui"
+          src="refound_app.near/widget/editor.ui"
           props={{
             key: path,
             data: doc.data,

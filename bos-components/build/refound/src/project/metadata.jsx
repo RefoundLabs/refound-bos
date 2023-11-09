@@ -46,7 +46,7 @@ const handleUpdateProject = (new_project) => {
 
 return (
   <Widget
-    src="neardearla.near/widget/project.form"
+    src="refound_app.near/widget/project.form"
     props={{
       handleCreateProject: handleUpdateProject,
       defaultProject: project,

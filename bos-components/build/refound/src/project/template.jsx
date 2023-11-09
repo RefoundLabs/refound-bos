@@ -2,7 +2,7 @@ const { project, handle } = props;
 
 const temps = [
   {
-    src: "neardearla.near/widget/templates.project.doc",
+    src: "refound_app.near/widget/templates.project.doc",
     preview:
       "https://ipfs.near.social/ipfs/bafkreiepqmctupqt5irsqoqgchoqmfm76xofaxzvauv3canfehyqgeeafy",
     name: "Documentation Website",

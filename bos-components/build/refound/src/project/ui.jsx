@@ -1,12 +1,12 @@
 const tabs = {
   metadata: {
-    widget: "neardearla.near/widget/project.metadata",
+    widget: "refound_app.near/widget/project.metadata",
   },
   template: {
-    widget: "neardearla.near/widget/project.template",
+    widget: "refound_app.near/widget/project.template",
   },
   settings: {
-    widget: "neardearla.near/widget/project.settings",
+    widget: "refound_app.near/widget/project.settings",
   },
 };
 
