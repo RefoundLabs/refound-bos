@@ -80,12 +80,12 @@ const Projects = styled.div`
 
 // projects = null;
 return (
-  <div style={{backgroundColor:"#BFE7B5", color:"#113F0D", minHeight:'100vh'}}>
+  <div style={{backgroundColor:"#BFE7B5", color:"#113F0D", minHeight:'100vh', overflow:"hidden"}}>
     {(
       <>
-      <div className="text-left row p-5">
+      <div className="text-left row p-5"  >
         <div className="col">
-          <h1 style={{ fontFamily: "Cormorant", fontSize:"4em", color:"#113F0D", marginTop:"45%"}}>
+          <h1 style={{ fontFamily: "Cormorant", fontSize:"3.5em", color:"#113F0D", marginTop:"45%"}}>
             The platform for <span style={{ color: "#1193B0" }}>verified</span>{" "}
             journalism
           </h1>
@@ -102,13 +102,13 @@ return (
         </div>
         <div className="text-center col">
           <img
-            src="https://bafybeibfzyfyudqfn6equrqbscrdizhki6lzyhqeq7pqpwxczjcrp47lfe.ipfs.w3s.link/campaignImage.png"
-            style={{ borderRadius: "84px", height: "75vh", width: auto, marginTop:"10%" }}
+            src="https://bafybeia4tdck43wycoyl7yafq2thqzjb4adidfgys4x3qznzfmpcbnsl3u.ipfs.w3s.link/landing_hero.png"
+            style={{ borderRadius: "84px",  width:"100%", marginTop:"-20%", marginLeft:"10%"}}
           ></img>
         </div>
       </div>
 
-      <div className="text-left row p-5" style={{minHeight:"80vh", marginTop:"45%"}}>
+      <div className="text-left row p-5" style={{minHeight:"80vh", marginTop:"5%"}}>
         <div className="col">
           <h5>mint with</h5>
           <h1>Proof of Verification</h1>
@@ -116,10 +116,10 @@ return (
         </div>
         <div className="col">
         <img
-            src=""
-            style={{ borderRadius: "84px", height: "50", width: "50", marginTop:"10%" }}
+            src="https://bafybeihafilg264onmncqyp5zmkmut46dwcce6byuu7fxzelur4ljf4ode.ipfs.w3s.link/map.jpg"
+            style={{ height: "auto", width: "100%" }}
           ></img>
-          <p>Our decentralized application provides journalists a platform to share their content, monetize it, and maintain anonymity and safety by using a wallet sign-in.</p>
+          <p style={{fontSize:"0.8em", width:"60%"}}>Our decentralized application provides journalists a platform to share their content, monetize it, and maintain anonymity and safety by using a wallet sign-in.</p>
         </div>
       </div>
 
