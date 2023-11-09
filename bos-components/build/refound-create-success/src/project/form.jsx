@@ -152,15 +152,14 @@ return (
           />
         </div>
         <div className="col">
-          {/* <Widget
+          <Widget
             src={IB}
             props={{
               children: buttonChildren ?? "Create Project",
               variant: "success",
               onClick: () => beforeHandleCreateProject(),
             }}
-          /> */}
-          <Link href="https://near.org/refound_create_success.near/widget/home"><button>Create Project</button></Link>
+          />
         </div>
       </div>
     </div>

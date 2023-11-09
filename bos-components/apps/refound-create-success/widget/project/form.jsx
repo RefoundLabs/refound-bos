@@ -1,16 +1,4 @@
-const UUID = {
-  generate: (template) => {
-    if (typeof template !== "string") {
-      template = "xxxxxxxx-xxxx-xxxx-yxxx-xxxxxxxxxxxx";
-    }
-    return template.replace(/[xy]/g, (c) => {
-      var r = (Math.random() * 16) | 0;
-      var v = c === "x" ? r : (r & 0x3) | 0x8;
-      return v.toString(16);
-    });
-  },
-};
-
+/*__@import:everything/utils/UUID__*/
 
 const { handleCreateProject, defaultProject, buttonChildren, buttonProps } =
   props;
@@ -39,9 +27,9 @@ const beforeHandleCreateProject = () => {
   }
 };
 
-const IT = "nearui.near/widget/Input.ExperimentalText";
-const SI = "nearui.near/widget/Social.ImageUpload";
-const IB = "nearui.near/widget/Input.Button";
+const IT = "/*__@replace:nui__*//widget/Input.ExperimentalText";
+const SI = "/*__@replace:nui__*//widget/Social.ImageUpload";
+const IB = "/*__@replace:nui__*//widget/Input.Button";
 return (
   <div className="p-4 bg-white rounded-4 row">
     <div className="d-flex flex-column gap-3 col">
@@ -152,15 +140,14 @@ return (
           />
         </div>
         <div className="col">
-          {/* <Widget
+          <Widget
             src={IB}
             props={{
               children: buttonChildren ?? "Create Project",
               variant: "success",
               onClick: () => beforeHandleCreateProject(),
             }}
-          /> */}
-          <Link href="https://near.org/refound_create_success.near/widget/home"><button>Create Project</button></Link>
+          />
         </div>
       </div>
     </div>

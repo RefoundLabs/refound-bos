@@ -137,7 +137,7 @@ const KEYS = {
   init: (pid) => `init/${pid}`, // lets us know when the project has been initialized
 };
 const DOC_SEPARATOR = ".";
-const DEFAULT_TEMPLATE = "refound-create-success.near/widget/templates.project.doc";
+const DEFAULT_TEMPLATE = "refound_create_success.near/widget/templates.project.doc";
 
 const handleDocument = {
   /**
@@ -222,7 +222,7 @@ const handleDocument = {
         data: value,
         metadata: {
           createdAt: new Date().toISOString(),
-          type: "refound-create-success.near/type/document",
+          type: "refound_create_success.near/type/document",
         },
       },
     };
@@ -380,7 +380,7 @@ const handleDocument = {
 
 const handleProject = {
   getAll: () => {
-    return getAllThings("refound-create-success.near/type/project", [accountId]);
+    return getAllThings("refound_create_success.near/type/project", [accountId]);
   },
   get: (pid) => {
     return getThing(pid, [accountId]);
@@ -393,7 +393,7 @@ const handleProject = {
     });
     // currently setting project as metadata, need to match with typical metadata
     Social.set({
-      thing: createThing("refound-create-success.near/type/project", {}, project),
+      thing: createThing("refound_create_success.near/type/project", {}, project),
     });
   },
   delete: (pid) => {

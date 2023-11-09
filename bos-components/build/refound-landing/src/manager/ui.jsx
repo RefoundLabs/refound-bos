@@ -77,9 +77,109 @@ const Projects = styled.div`
   margin-bottom: 36px;
 `;
 
+
+const Nav = styled.div`
+  // commenting out stickiness for now
+  // position: fixed;
+  // top: 0;
+  // left: 0;
+  width: 100%;
+  display: flex;
+  padding: 0 64px 0 64px;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+  height: ${navHeightPx}px;
+  background: #ffffff;
+  z-index: 1000;
+  // background: pink;
+
+  @media screen and (max-width: 768px) {
+    // display: none;
+    padding: 24px 8px 24px 16px;
+    height: ${navHeightPxMobile}px;
+  }
+
+  & > a {
+    width: 10rem;
+  }
+`;
+
+const NavLeft = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  // background: green;
+`;
+
+const NavRight = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+`;
+
+const NavRightMobile = styled.div`
+  display: none;
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 16px;
+    padding-right: 16px;
+  }
+`;
+
+const NavLogo = styled.a`
+  text-align: center;
+  color: #2e2e2e;
+  font-size: 23.95px;
+  font-weight: 700;
+  line-height: 23.95px;
+  word-wrap: break-word;
+  margin-right: 48px;
+  text-decoration: none;
+
+  :hover {
+    text-decoration: none;
+  }
+`;
+
+const NavTabs = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+`;
+
+const NavTab = styled.a`
+  cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
+  color: ${(props) => (props.selected ? "#2E2E2E" : "#7B7B7B")};
+  font-size: 14px;
+  font-weight: ${(props) => (props.selected ? 500 : 400)};
+  line-height: 16px;
+  word-wrap: break-word;
+  text-decoration: none;
+  position: relative;
+
+  :not(:last-child) {
+    margin-right: 32px;
+  }
+
+  :hover {
+    text-decoration: none;
+  }
+`;
+
 // projects = null;
 return (
   <div style={{ minHeight: "100vh", overflow: "hidden" }}>
+   
     {
       <div>
         <div
@@ -90,7 +190,25 @@ return (
             borderBottomRightRadius: "85px",
           }}
         >
+        <div className="row">
+        <Nav>
+          <NavLeft>
+            <NavLogo href={"https://near.org/refound-landing.near/widget/home"}>refound</NavLogo>
+          </NavLeft>
+          <NavRight>
+            <NavTabs >
+             <Link href="https://near.org/refound-create-post.near/widget/home" style={{textDecoration:"none", color:"grey", marginRight:"10px"}}>Create</Link>
+              <Link href="https://near.org/refoundonbos.near/widget/home" style={{textDecoration:"none", color:"grey", marginRight:"10px"}}>Discover</Link>
+              <Link href="https://near.org/refound-features.near/widget/home" style={{textDecoration:"none", color:"grey", marginRight:"10px"}}>Features</Link>
+              <Link href="https://near.org/refound-create-campaign.near/widget/home" style={{textDecoration:"none", color:"grey", marginRight:"10px"}}>Funding Relief</Link>
+              <Link href="https://refound.app/waitlist" style={{textDecoration:"none", color:"grey", marginRight:"10px"}}>Waitlist</Link>
+            </NavTabs>
+          </NavRight>
+        
+        </Nav>
+      </div>
           <div className="text-left row p-5">
+         
             <div className="col">
               <h1
                 style={{
@@ -374,28 +492,30 @@ return (
             </p>
           </div>
           <div className="col p-5">
-            <button
-              style={{
-                backgroundColor: "#616161",
-                borderColor: "#616161",
-                borderRadius: "39.5px",
-              }}
-              href="https://near.org/refound_app.near/widget/home"
-            >
-              This Way{" "}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="55"
-                height="34"
-                viewBox="0 0 99 34"
-                fill="none"
+            <a href="https://near.org/refound_app.near/widget/home">
+              <button
+                style={{
+                  backgroundColor: "#616161",
+                  borderColor: "#616161",
+                  borderRadius: "39.5px",
+                }}
+              
               >
-                <path
-                  d="M98.1574 18.4987C99.0379 17.6181 99.0379 16.1905 98.1574 15.3099L83.808 0.960511C82.9274 0.0799599 81.4998 0.0799599 80.6192 0.960511C79.7387 1.84106 79.7387 3.26872 80.6192 4.14927L93.3743 16.9043L80.6192 29.6593C79.7387 30.5399 79.7387 31.9675 80.6192 32.8481C81.4998 33.7286 82.9274 33.7286 83.808 32.8481L98.1574 18.4987ZM0.0998535 19.1591H96.563V14.6495H0.0998535V19.1591Z"
-                  fill="#FF8B00"
-                />
-              </svg>
-            </button>
+                This Way{" "}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="55"
+                  height="34"
+                  viewBox="0 0 99 34"
+                  fill="none"
+                >
+                  <path
+                    d="M98.1574 18.4987C99.0379 17.6181 99.0379 16.1905 98.1574 15.3099L83.808 0.960511C82.9274 0.0799599 81.4998 0.0799599 80.6192 0.960511C79.7387 1.84106 79.7387 3.26872 80.6192 4.14927L93.3743 16.9043L80.6192 29.6593C79.7387 30.5399 79.7387 31.9675 80.6192 32.8481C81.4998 33.7286 82.9274 33.7286 83.808 32.8481L98.1574 18.4987ZM0.0998535 19.1591H96.563V14.6495H0.0998535V19.1591Z"
+                    fill="#FF8B00"
+                  />
+                </svg>
+              </button>
+            </a>
           </div>
         </div>
       </div>

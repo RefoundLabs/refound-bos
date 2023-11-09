@@ -1,4 +1,4 @@
-const ownerId = "potlock.near";
+const ownerId = "refound_landing.near";
 
 const navHeightPx = 110;
 const navHeightPxMobile = 96;
@@ -221,7 +221,7 @@ const Ear = styled.div`
 
 const tabOptions = [
   { text: "Discover", link: "posts", disabled: false },
-  { text: "Create", link: "https://near.org/refound-create-campaign.near/widget/home", disabled: false },
+  { text: "Create", link: "https://near.org/refound_create_campaign.near/widget/home", disabled: false },
 ];
 
 const Modal = ({ isOpen, onClose, children }) => {
@@ -239,20 +239,29 @@ const Modal = ({ isOpen, onClose, children }) => {
 return (
   <>
     <Nav>
-          <NavLeft>
-            <NavLogo href={"https://near.org/refound-landing.near/widget/home"}>refound</NavLogo>
-          </NavLeft>
-          <NavRight>
-            <NavTabs >
-             <Link href="https://near.org/refound-create-post.near/widget/home" style={{textDecoration:"none", color:"grey", marginRight:"10px"}}>Create</Link>
-              <Link href="https://near.org/refoundonbos.near/widget/home" style={{textDecoration:"none", color:"grey", marginRight:"10px"}}>Discover</Link>
-              <Link href="https://near.org/refound-features.near/widget/home" style={{textDecoration:"none", color:"grey", marginRight:"10px"}}>Features</Link>
-              <Link href="https://near.org/refound-create-campaign.near/widget/home" style={{textDecoration:"none", color:"grey", marginRight:"10px"}}>Funding Relief</Link>
-              <Link href="https://refound.app/waitlist" style={{textDecoration:"none", color:"grey", marginRight:"10px"}}>Waitlist</Link>
-            </NavTabs>
-          </NavRight>
-        
-        </Nav>
+      <NavLeft>
+        <NavLogo href={"https://near.org/refound_landing.near/widget/home"}>refound</NavLogo>
+      </NavLeft>
+      <NavRight>
+        <NavTabs>
+           <Link href="https://near.org/refound_create_campaign.near/widget/home">Create</Link>
+        </NavTabs>
+      </NavRight>
+      <NavRightMobile>
+        {/* <CartButton>
+          <CartButtonText>Cart</CartButtonText>
+        </CartButton> */}
+        <NavTab
+          onClick={(e) => {
+            props.setIsCartModalOpen(!props.isCartModalOpen);
+          }}
+          selected={props.tab === "cart"}
+        >
+          Donate
+          <CartCount>{Object.keys(props.cart).length}</CartCount>
+        </NavTab>
+      </NavRightMobile>
+    </Nav>
     <Modal
       isOpen={props.isCartModalOpen}
       onClose={() => props.setIsCartModalOpen(false)}

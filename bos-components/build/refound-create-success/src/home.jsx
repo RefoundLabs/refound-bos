@@ -40,29 +40,29 @@ const pages = [
     id: "projects",
     title: "Projects",
     active: state.page === "projects",
-    widget: "refound-create-success.near/widget/manager.index",
-    provider: "refound-create-success.near/widget/Provider",
+    widget: "refound_create_success.near/widget/manager.index",
+    provider: "refound_create_success.near/widget/Provider",
   },
   {
     id: "editor",
     title: "Editor",
     active: state.page === "editor",
-    widget: "refound-create-success.near/widget/editor.index",
-    provider: "refound-create-success.near/widget/Provider",
+    widget: "refound_create_success.near/widget/editor.index",
+    provider: "refound_create_success.near/widget/Provider",
   },
   {
     id: "manage",
     title: "Manage",
     active: state.page === "manage",
-    widget: "refound-create-success.near/widget/project.index",
-    provider: "refound-create-success.near/widget/Provider",
+    widget: "refound_create_success.near/widget/project.index",
+    provider: "refound_create_success.near/widget/Provider",
   },
 ];
 const activePage = pages.find((p) => p.active);
 
 const navigate = (v, params) => {
   State.update({ page: v, project: params?.project });
-  const url = Url.construct("#/refound-create-success.near/widget/home", params);
+  const url = Url.construct("#/refound_create_success.near/widget/home", params);
   Storage.set("url", url);
 };
 
@@ -79,7 +79,7 @@ return (
               project,
               ...props,
               templates: {
-                Folders: "refound-create-success.near/widget/editor.uiFolders",
+                Folders: "refound_create_success.near/widget/editor.uiFolders",
               },
             }}
           />

@@ -128,7 +128,7 @@ const renderFolder = (folder) => {
       key={path}
     >
       <Widget
-        src="refound-create-success.near/widget/editor.uiFoldersMenu"
+        src="refound_create_success.near/widget/editor.uiFoldersMenu"
         props={{
           path,
           handler,
@@ -184,7 +184,7 @@ const renderProject = (project) => {
     <Project>
       <a
         target="_blank"
-        href={Url.construct("#/refound-create-success.near/widget/p", {
+        href={Url.construct("#/refound_create_success.near/widget/p", {
           id: projectId,
           by: context.accountId,
         })}
@@ -200,7 +200,7 @@ const renderProject = (project) => {
           onClick={() => {
             navigate("manage", { project: projectId });
           }}
-          href={Url.construct("#/refound-create-success.near/widget/home", {
+          href={Url.construct("#/refound_create_success.near/widget/home", {
             page: "manage",
             project: projectId,
           })}

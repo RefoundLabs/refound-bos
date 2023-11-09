@@ -28,28 +28,27 @@ const beforeHandleCreateProject = () => {
 };
 
 const IT = "/*__@replace:nui__*//widget/Input.ExperimentalText";
+const IS = "/*__@replace:nui__*//widget/Input.Select";
 const SI = "/*__@replace:nui__*//widget/Social.ImageUpload";
 const IB = "/*__@replace:nui__*//widget/Input.Button";
 return (
   <div className="p-4 bg-white rounded-4 row">
     <div className="d-flex flex-column gap-3 col">
       <h3>{buttonChildren}</h3>
-      <h6 className="mb-0">Images(Up To 5)</h6>
-      {state.project.image && (
-        <img src={state.project.image} alt="" height={100} width={100} />
-      )}
       <Widget
-        src={SI}
+        src={IS}
         props={{
-          onChange: (v) => updateP("image", v),
-          value: state.project.image,
+          label: "I want to",
+          inputProps: {
+            defaultValue: state.project.category,
+          },
+          onChange: (v) => updateP("category", v),
         }}
       />
-
       <Widget
         src={IT}
         props={{
-          label: "Title",
+          label: "Campaign Title",
           placeholder: "My project",
           inputProps: {
             defaultValue: state.project.title,
@@ -69,41 +68,32 @@ return (
           onChange: (v) => updateP("location", v),
         }}
       />
-
       <Widget
         src={IT}
         props={{
-          label: "Tags",
-          placeholder: "Separate with commas",
+          label: "Start Date",
+          placeholder: "",
           inputProps: {
-            defaultValue: state.project.tags.join(", "),
+            defaultValue: state.project.startDate,
           },
-          onChange: (v) =>
-            updateP(
-              "tags",
-              (v || "")
-                .split(",")
-                .filter((v) => v !== "")
-                .map((v) => v.trim()),
-            ),
+          onChange: (v) => updateP("startDate", v),
         }}
       />
 
       <Widget
         src={IT}
         props={{
-          label: "Pricing",
+          label: "Goal",
           placeholder: "",
           inputProps: {
-            defaultValue: state.project.pricing,
+            defaultValue: state.project.goal,
           },
-          onChange: (v) => updateP("pricing", v),
+          onChange: (v) => updateP("goal", v),
         }}
       />
     </div>
-    <div className="d-flex flex-column gap-2 col">
+    <div className="d-flex flex-column gap-3 col">
       <br></br>
-      <button>Take a Photo</button>
       <Widget
         src={IT}
         props={{
@@ -120,37 +110,43 @@ return (
       <Widget
         src={IT}
         props={{
-          label: "Date Taken",
+          label: "End Date",
           placeholder: "",
           inputProps: {
-            defaultValue: state.project.dateTaken,
+            defaultValue: state.project.endDate,
           },
-          onChange: (v) => updateP("dateTaken", v),
+          onChange: (v) => updateP("endDate", v),
         }}
       />
-      <div className="row">
-        <div className="col">
-          <Widget
-            src={IB}
-            props={{
-              children: buttonChildren ?? "Cancel",
-              variant: "alert",
-              onClick: () => beforeHandleCreateProject(),
-            }}
-          />
-        </div>
-        <div className="col">
-          {/* <Widget
-            src={IB}
-            props={{
-              children: buttonChildren ?? "Create Project",
-              variant: "success",
-              onClick: () => beforeHandleCreateProject(),
-            }}
-          /> */}
-          <Link href="https://near.org/refound_create_success.near/widget/home"><button>Create Project</button></Link>
-        </div>
-      </div>
     </div>
+    <h6 className="mb-0">Images(Up To 5)</h6>
+    {state.project.logo && (
+      <img src={state.project.logo} alt="" height={100} width={100} />
+    )}
+    <Widget
+      src={SI}
+      props={{
+        onChange: (v) => updateP("logo", v),
+        value: state.project.logo,
+      }}
+    />
+    <div className="text-danger mt-2">{state.error}</div>
+    <Widget
+      src={IB}
+      props={{
+        children: buttonChildren ?? "Cancel",
+        variant: "alert",
+        onClick: () => beforeHandleCreateProject(),
+      }}
+    />
+    {/* <Widget
+      src={IB}
+      props={{
+        children: buttonChildren ?? "Create Project",
+        variant: "success",
+        onClick: () => beforeHandleCreateProject(),
+      }}
+    />*/}
+    <button><Link src="https://near.org/refound_create_post.near/widget/home">Create Project</Link></button>
   </div>
 );
