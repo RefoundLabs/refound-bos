@@ -119,6 +119,7 @@ const CATEGORY_MAPPINGS = {
 // const HIDDEN_PROJECT_IDS = ["roshaan.near"];
 
 if (!state.registeredPosts) {
+<<<<<<< HEAD
   Near.asyncView(registryId, "get_series", {}).then((posts) => {
     const formattedPosts = posts.map((series) => {
       // let profileImageUrl = DEFAULT_PROFILE_IMAGE_URL;
@@ -151,6 +152,41 @@ if (!state.registeredPosts) {
       registeredPosts: formattedPosts,
     });
   });
+=======
+  Near.asyncView(registryId, "get_series", {})
+    .then((posts) => {
+        const formattedPosts = posts.map((series) => {
+        
+          // let profileImageUrl = DEFAULT_PROFILE_IMAGE_URL;
+          // if (profileData.image) {
+          //   const imageUrl = getImageUrlFromSocialImage(profileData.image);
+          //   if (imageUrl) profileImageUrl = imageUrl;
+          // }
+          // // get banner image URL
+          // let bannerImageUrl = DEFAULT_BANNER_IMAGE_URL;
+          // if (profileData.backgroundImage) {
+          //   const imageUrl = getImageUrlFromSocialImage(profileData.backgroundImage);
+          //   if (imageUrl) bannerImageUrl = imageUrl;
+          // }
+          const formatted = {
+            seriesId: series.series_id,
+            ownerId: series.owner_id,
+            title: series.metadata.title ?? "",
+            description: series.metadata.description ?? "",
+            media: series.metadata.media,
+            dateTaken: series.metadata.extra && JSON.parse(series.metadata.extra).dateTaken,
+            location: series.metadata.extra && JSON.parse(series.metadata.extra).locationTaken,
+            tags: series.metadata.tags || [],
+            verified: series.verified
+          };
+          console.log("series omn discover", series)
+          return formatted;
+        });
+        State.update({
+          registeredPosts: formattedPosts.filter((p) => p.seriesId !== 0 && p.seriesId !== 1),
+        });
+      });
+>>>>>>> 9890ffca39b992a059447927625d81e052214e01
 }
 
 if (!state.registeredPosts) return "";
@@ -162,7 +198,13 @@ const projects = state.registeredPosts;
 
 return (
   <>
+<<<<<<< HEAD
     <Wrapper>{/* MAP */}</Wrapper>
+=======
+  <Wrapper>
+
+  <img src="https://bafybeiatw7f5qy565cwkl43ctaonpzbbsmmjioleumsspkk3ajgk3u27h4.ipfs.w3s.link/map.png" alt="Map" />
+>>>>>>> 9890ffca39b992a059447927625d81e052214e01
 
     <ProjectsContainer>
       <SectionHeader>

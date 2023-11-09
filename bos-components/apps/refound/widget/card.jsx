@@ -92,14 +92,11 @@ let image =
 const tags = series && Object.keys(series.tags ?? {});
 const dateTaken = series.dateTaken;
 const location = series.location;
-//console.log("media", image)
-const donationsForProject = Near.view(
-  donationContractId,
-  "get_total_donations",
-  {
-    recipient_id: id,
-  },
-);
+const verified = series.verified;
+console.log("media", image)
+const donationsForProject = Near.view(donationContractId, "get_total_donations", {
+  recipient_id: id,
+});
 
 const [totalAmount, totalDonors] = useMemo(() => {
   if (!donationsForProject) return [null, null];
