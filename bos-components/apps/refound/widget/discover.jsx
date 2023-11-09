@@ -135,19 +135,21 @@ if (!state.registeredPosts) {
           //   if (imageUrl) bannerImageUrl = imageUrl;
           // }
           const formatted = {
+            seriesId: series.series_id,
             ownerId: series.owner_id,
             title: series.metadata.title ?? "",
             description: series.metadata.description ?? "",
             media: series.metadata.media,
             dateTaken: series.metadata.extra && JSON.parse(series.metadata.extra).dateTaken,
             location: series.metadata.extra && JSON.parse(series.metadata.extra).locationTaken,
-            tags: series.metadata.tags || []
+            tags: series.metadata.tags || [],
+            verified: series.verified
           };
           console.log("series omn discover", series)
           return formatted;
         });
         State.update({
-          registeredPosts: formattedPosts,
+          registeredPosts: formattedPosts.filter((p) => p.seriesId !== 0 && p.seriesId !== 1),
         });
       });
 }

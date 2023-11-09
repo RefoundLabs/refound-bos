@@ -89,6 +89,7 @@ const image = series.media ||  "https://ipfs.near.social/ipfs/bafkreibmiy4ozblcg
 const tags = series && Object.keys(series.tags ?? {});
 const dateTaken = series.dateTaken;
 const location = series.location;
+const verified = series.verified;
 console.log("media", image)
 const donationsForProject = Near.view(donationContractId, "get_total_donations", {
   recipient_id: id,
@@ -124,8 +125,6 @@ const PROJECT_STATUSES = [
 return (
   <>
     <Card href={`?tab=post&seriesId=${id}`} key={id}>
-   
-    
       <Info>
        <img
           className={className}
