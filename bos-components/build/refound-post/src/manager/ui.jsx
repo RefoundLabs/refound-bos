@@ -26,44 +26,6 @@ const Url = {
 
 const { handleCreateProject, projects, navigate } = props;
 
-function renderProject({ title, tags, logo, id }) {
-  return (
-    <a
-      className="rounded-2 overflow-hidden w-100 text-decoration-none"
-      onClick={() => {
-        navigate("editor", { project: id });
-      }}
-      href={Url.construct("#/refound-post.near/widget/home", {
-        page: "editor",
-        project: id,
-      })}
-      style={{
-        width: "calc( 20% - 20px )",
-        maxWidth: "100%",
-        backgroundColor: "#f9fbfe",
-        border: "1px solid #d1d5db",
-        cursor: "pointer",
-      }}
-    >
-      <div className="ratio ratio-4x3">
-        <div className="d-flex justify-content-center align-items-center bg-white">
-          {logo && <img src={logo} alt={title} height={55} width={55} />}
-        </div>
-      </div>
-      <div className="p-3">
-        <h5
-          className="h6 m-0"
-          style={{
-            lineHeight: 1.5,
-          }}
-        >
-          {title}
-        </h5>
-      </div>
-    </a>
-  );
-}
-
 
 const widget = (src, props, other) => (
   <Widget src={src} props={props} {...other} />
@@ -176,9 +138,42 @@ const NavTab = styled.a`
   }
 `;
 
+const IB = "nearui.near/widget/Input.Button";
+
 // projects = null;
 return (
   <>
-  <h3>Title</h3>
+      <div className="row">
+        <Nav>
+          <NavLeft>
+            <NavLogo href={"https://near.org/refound-landing.near/widget/home"}>refound</NavLogo>
+          </NavLeft>
+          <NavRight>
+            <NavTabs >
+             <Link href="https://near.org/refound-create-post.near/widget/home" style={{textDecoration:"none", color:"grey", marginRight:"10px"}}>Create</Link>
+              <Link href="https://near.org/refoundonbos.near/widget/home" style={{textDecoration:"none", color:"grey", marginRight:"10px"}}>Discover</Link>
+              <Link href="https://near.org/refound-features.near/widget/home" style={{textDecoration:"none", color:"grey", marginRight:"10px"}}>Features</Link>
+              <Link href="https://near.org/refound-create-campaign.near/widget/home" style={{textDecoration:"none", color:"grey", marginRight:"10px"}}>Funding Relief</Link>
+              <Link href="https://refound.app/waitlist" style={{textDecoration:"none", color:"grey", marginRight:"10px"}}>Waitlist</Link>
+            </NavTabs>
+          </NavRight>
+        
+        </Nav>
+      </div>
+      <div style={{marginTop:"5%"}}>
+        <h3>Title</h3>
+        <p>{accountId}</p>
+        <img src={ipfsLink || "https://ipfs.near.social/ipfs/bafkreibmiy4ozblcgv3fm3gc6q62s55em33vconbavfd2ekkuliznaq3zm"}></img>
+        <p>{description}</p>
+        <p>Location: {location}</p>
+        <p>Date Taken: {dateTaken}</p>
+        <p>Tags: {tags}</p>
+        <button style={{backgroundColor:"black", borderColor:"black"}}>Up Vote</button>
+        <button  style={{backgroundColor:"black", borderColor:"black"}}>Down Vote</button>
+        <button>Purchase License</button>
+        <div style={{padding:"20px"}}></div>
+        <button style={{backgroundColor:"#A2733B", borderColor:"#A2733B"}}>Donate to this Cause</button>
+        <div style={{padding:"5%"}}></div>
+      </div>
   </>
 );
