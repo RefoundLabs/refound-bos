@@ -40,16 +40,32 @@ const beforeHandleCreateProject = () => {
 };
 
 const IT = "nearui.near/widget/Input.ExperimentalText";
+const IS = "nearui.near/widget/Input.Select";
 const SI = "nearui.near/widget/Social.ImageUpload";
 const IB = "nearui.near/widget/Input.Button";
 return (
   <div className="p-4 bg-white rounded-4 row">
     <div className="d-flex flex-column gap-3 col">
       <h3>{buttonChildren}</h3>
+      {/* <label>I want to</label>
+      <select type="dropdown">
+        <option>Raise funds for a Journalist</option>
+        <option>Commission a Journalist</option>
+      </select> */}
+      <Widget
+        src={IS}
+        props={{
+          label: "I want to",
+          inputProps: {
+            defaultValue: state.project.category,
+          },
+          onChange: (v) => updateP("category", v),
+        }}
+      />
       <Widget
         src={IT}
         props={{
-          label: "Title",
+          label: "Campaign Title",
           placeholder: "My project",
           inputProps: {
             defaultValue: state.project.title,
