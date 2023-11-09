@@ -88,6 +88,7 @@ const description = series && series.description || ""
 const image = series.media ||  "https://ipfs.near.social/ipfs/bafkreibmiy4ozblcgv3fm3gc6q62s55em33vconbavfd2ekkuliznaq3zm";
 const tags = series && Object.keys(series.tags ?? {});
 const dateTaken = series.dateTaken;
+const location = series.location;
 console.log("media", image)
 const donationsForProject = Near.view(donationContractId, "get_total_donations", {
   recipient_id: id,
@@ -146,13 +147,15 @@ return (
             tags,
           }}
         />
-      </Info>
-      <DonationsInfoContainer>
-        <DonationsInfoItem>
+         <DonationsInfoItem>
           <Title>Date Taken</Title>
           <SubTitle>{dateTaken}</SubTitle>
         </DonationsInfoItem>
-      </DonationsInfoContainer>
+        <DonationsInfoItem>
+        <Title>Location</Title>
+          <SubTitle>{location}</SubTitle>
+        </DonationsInfoItem>
+      </Info>
       <DonationsInfoContainer>
         <DonationsInfoItem>
           <Title>{totalDonors || totalDonors === 0 ? totalDonors : "-"}</Title>
