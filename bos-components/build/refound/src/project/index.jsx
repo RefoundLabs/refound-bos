@@ -23,7 +23,7 @@ const project = {
 
 return (
   <Widget
-    src="neardearla.near/widget/project.ui"
+    src="refound_app.near/widget/project.ui"
     props={{ ...props, project: project }}
   />
 );

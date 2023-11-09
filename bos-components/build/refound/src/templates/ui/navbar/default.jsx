@@ -38,7 +38,7 @@ function Navbar({ open, setOpen, pages, onPageChange }) {
     >
       <a
         className="navbar-brand d-flex align-items-center gap-2 text-decoration-none"
-        href="#/neardearla.near/widget/home"
+        href="#/refound_app.near/widget/home"
         onClick={() => onPageChange("projects")}
       >
         <img
@@ -85,7 +85,7 @@ function Navbar({ open, setOpen, pages, onPageChange }) {
                       cursor: "pointer",
                     }}
                     onClick={() => onPageChange(p)}
-                    href={Url.construct("#/neardearla.near/widget/home", {
+                    href={Url.construct("#/refound_app.near/widget/home", {
                       page: p,
                     })}
                   >

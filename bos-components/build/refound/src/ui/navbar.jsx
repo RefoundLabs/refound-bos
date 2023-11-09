@@ -9,7 +9,7 @@ const update = (k, v) => State.update({ [k]: v });
 return (
   <>
     <Widget
-      src={template ?? "neardearla.near/widget/templates.ui.navbar.default"}
+      src={template ?? "refound_app.near/widget/templates.ui.navbar.default"}
       props={{
         open: state.mobileNavbarOpen,
         setOpen: (v) => update("mobileNavbarOpen", v),

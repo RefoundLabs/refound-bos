@@ -1,6 +1,6 @@
 const { project } = props;
 
-const widgetToFork = "neardearla.near/widget/p";
+const widgetToFork = "refound_app.near/widget/p";
 let widgetCode = Social.get(widgetToFork);
 
 if (widgetCode === null) return <></>;

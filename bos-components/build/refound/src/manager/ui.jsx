@@ -33,7 +33,7 @@ function renderProject({ title, tags, logo, id }) {
       onClick={() => {
         navigate("editor", { project: id });
       }}
-      href={Url.construct("#/neardearla.near/widget/home", {
+      href={Url.construct("#/refound_app.near/widget/home", {
         page: "editor",
         project: id,
       })}
@@ -83,7 +83,7 @@ function renderHeader({ handleCreateProject }) {
           ),
           content: (
             <Widget
-              src="neardearla.near/widget/project.form"
+              src="refound_app.near/widget/project.form"
               props={{
                 handleCreateProject,
               }}
@@ -124,7 +124,7 @@ return (
         Also check out
         <a
           target="_blank"
-          href="/#/neardearla.near/widget/p?id=62151bc4-093d-2fdd-a30b-539ba27f45d1&by=sking.near"
+          href="/#/refound_app.near/widget/p?id=62151bc4-093d-2fdd-a30b-539ba27f45d1&by=sking.near"
         >
           this example
         </a>{" "}
