@@ -221,7 +221,7 @@ const Ear = styled.div`
 
 const tabOptions = [
   { text: "Discover", link: "posts", disabled: false },
-  { text: "Create", link: "create", disabled: true },
+  { text: "Create", link: "https://near.org/refound-create-campaign.near/widget/home", disabled: false },
 ];
 
 const Modal = ({ isOpen, onClose, children }) => {
@@ -240,33 +240,11 @@ return (
   <>
     <Nav>
       <NavLeft>
-        <NavLogo href={`?tab=projects`}>refound</NavLogo>
+        <NavLogo href={"https://near.org/refound-landing.near/widget/home"}>refound</NavLogo>
       </NavLeft>
       <NavRight>
         <NavTabs>
-          {tabOptions.map((tab) => {
-            return (
-              <NavTab
-                href={`?tab=${tab.link}`}
-                disabled={tab.disabled}
-                onClick={(e) => {
-                  if (tab.disabled) e.preventDefault();
-                }}
-                selected={props.tab === tab.link}
-              >
-                {tab.text}
-              </NavTab>
-            );
-          })}
-          <NavTab
-            onClick={(e) => {
-              props.setIsCartModalOpen(!props.isCartModalOpen);
-            }}
-            selected={props.tab === "cart"}
-          >
-            Donate to Campaign
-            <CartCount>{Object.keys(props.cart).length}</CartCount>
-          </NavTab>
+           <Link href="https://near.org/refound-create-campaign.near/widget/home">Create</Link>
         </NavTabs>
       </NavRight>
       <NavRightMobile>

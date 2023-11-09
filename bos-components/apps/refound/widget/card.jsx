@@ -118,14 +118,14 @@ const [totalAmount, totalDonors] = useMemo(() => {
   ];
 }, [donationsForProject]);
 
-const PROJECT_STATUSES = [
-  "Submitted",
-  "InReview",
-  "Approved",
-  "Rejected",
-  "Graylisted",
-  "Blacklisted",
-];
+// const PROJECT_STATUSES = [
+//   "Submitted",
+//   "InReview",
+//   "Approved",
+//   "Rejected",
+//   "Graylisted",
+//   "Blacklisted",
+// ];
 
 // const getLinks = async (str) => {
 // 	try {
@@ -194,6 +194,7 @@ return (
           <SubTitle>{location}</SubTitle>
         </DonationsInfoItem>
       </Info>
+      
       <DonationsInfoContainer>
         <DonationsInfoItem>
           <Title>{totalDonors || totalDonors === 0 ? totalDonors : "-"}</Title>

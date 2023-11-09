@@ -97,7 +97,8 @@ return (
           <h3>Fund my reporting campaign in</h3>
           <h3 style={{ color: "#A2733B" }}>Eastern Europe</h3>
           <p>Hey there! I'm Jane, a passionate freelance journalist on a mission to bring you the untold stories of Eastern Europe. As an independent storyteller with a shoestring budget, I'm reaching out to you, the community, to help turn this dream into reality.</p>
-
+          
+          <div style={{padding:"5%"}}></div>
           <p>Goal: $1000</p>
           <p>Progress:</p>
           <div class="progress">
@@ -105,14 +106,14 @@ return (
           </div>
 
           <div style={{padding:"5%"}}></div>
-          <h3>Related Post</h3>
-          <Widget src={`refound_app.near/widget/card`} props={props} />
+          {/* <h3>Related Post</h3>
+          <Widget src={`refound_app.near/widget/card`} props={{"title":"Test", "description":"Test", "media":""}}} /> */}
         </div>
         
         <div className="col w-50">
           <img
             src="https://bafybeibfzyfyudqfn6equrqbscrdizhki6lzyhqeq7pqpwxczjcrp47lfe.ipfs.w3s.link/campaignImage.png"
-            style={{ borderRadius: "84px", width: "80%", height: auto }}
+            style={{ borderRadius: "84px", width: "60%", height: auto }}
           ></img>
         </div>
       </div>
