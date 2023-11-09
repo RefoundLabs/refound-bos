@@ -1,11 +1,13 @@
 const projectID = props.project;
+const contractId = "refoundjournalism.near";
 
 if (!projectID) {
   return <div>Please specify a project ID</div>;
 }
 
 const handleUpdateProject = (new_project) => {
-  props.handle["project"].update(projectID, new_project);
+  // props.handle["project"].update(projectID, new_project);
+  // Near.call(contractId, "add_crowdfund", )
 };
 
 const projectRaw = props.handle["project"].get(projectID);

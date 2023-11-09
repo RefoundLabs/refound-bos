@@ -139,11 +139,11 @@ if (!state.registeredPosts) {
             title: series.metadata.title ?? "",
             description: series.metadata.description ?? "",
             media: series.metadata.media,
-            dateTaken: series.metadata.dateTaken,
-            location: series.metadata.locationTaken,
+            dateTaken: series.metadata.extra && JSON.parse(series.metadata.extra).dateTaken,
+            location: series.metadata.extra && JSON.parse(series.metadata.extra).locationTaken,
             tags: series.metadata.tags || []
           };
-          console.log("series", series)
+          console.log("series omn discover", series)
           return formatted;
         });
         State.update({
