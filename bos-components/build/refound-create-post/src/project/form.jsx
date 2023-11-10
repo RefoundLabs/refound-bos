@@ -152,19 +152,19 @@ return (
             }}
           />
            */}
- <Link href="https://near.org/refound_create_success.near/widget/home"><button style={{backgroundColor:"grey"}}>Cancel</button></Link>
+ <Link href="https://near.org/refound_create_success.near/widget/home"><button style={{backgroundColor:"grey", borderColor:"grey", padding:"18px 28px"}}>Cancel</button></Link>
 
         </div>
         <div className="col">
-          {/* <Widget
+          <Widget
             src={IB}
             props={{
-              children: buttonChildren ?? "Create Project",
+              children: buttonChildren ?? "Create Post",
               variant: "success",
               onClick: () => beforeHandleCreateProject(),
             }}
-          /> */}
-          <Link href="https://near.org/refound_create_success.near/widget/home"><button>Create Project</button></Link>
+          />
+          {/* <Link href="https://near.org/refound_create_success.near/widget/home"><button>Create Project</button></Link> */}
         </div>
       </div>
     </div>
