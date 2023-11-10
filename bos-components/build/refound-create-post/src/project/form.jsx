@@ -46,7 +46,7 @@ return (
   <div className="p-4 bg-white rounded-4 row">
     <div className="d-flex flex-column gap-3 col">
       <h3>{buttonChildren}</h3>
-      <h6 className="mb-0">Images(Up To 5)</h6>
+      <h6 className="mb-0" style={{textAlign:"initial"}}>Images(Up To 5)</h6>
       {state.project.image && (
         <img src={state.project.image} alt="" height={100} width={100} />
       )}
@@ -113,9 +113,10 @@ return (
         }}
       />
     </div>
-    <div className="d-flex flex-column gap-2 col">
-      <br></br>
-      <button>Take a Photo</button>
+    <div className="d-flex flex-column gap-2 col" >
+    
+      {/* <button>Take a Photo</button> */}
+      <div style={{height:"110px"}}></div>
       <Widget
         src={IT}
         props={{
@@ -142,7 +143,7 @@ return (
       />
       <div className="row">
         <div className="col">
-          <Widget
+          {/* <Widget
             src={IB}
             props={{
               children: buttonChildren ?? "Cancel",
@@ -150,6 +151,9 @@ return (
               onClick: () => beforeHandleCreateProject(),
             }}
           />
+           */}
+ <Link href="https://near.org/refound_create_success.near/widget/home"><button style={{backgroundColor:"grey"}}>Cancel</button></Link>
+
         </div>
         <div className="col">
           {/* <Widget

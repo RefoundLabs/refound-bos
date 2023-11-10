@@ -235,7 +235,7 @@ return (
           onChange: (v) => updateP("location", v),
         }}
       />
-      <button style={{backgroundColor:"#A2733B", borderColor:"#A2733B"}}>Donate</button>
+      <button style={{backgroundColor:"#A2733B", borderColor:"#A2733B", marginTop:"20px"}}>Donate</button>
         </div>
         
         <div className="col w-50">
