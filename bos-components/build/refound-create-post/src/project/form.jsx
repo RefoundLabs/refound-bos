@@ -113,10 +113,10 @@ return (
         }}
       />
     </div>
-    <div className="d-flex flex-column gap-2 col" >
-    
+    <div className="d-flex flex-column gap-2 col">
+      <br></br>
       {/* <button>Take a Photo</button> */}
-      <div style={{height:"110px"}}></div>
+      <div style={{height:"80px"}}></div>
       <Widget
         src={IT}
         props={{
@@ -143,7 +143,7 @@ return (
       />
       <div className="row">
         <div className="col">
-          {/* <Widget
+          <Widget 
             src={IB}
             props={{
               children: buttonChildren ?? "Cancel",
@@ -151,9 +151,6 @@ return (
               onClick: () => beforeHandleCreateProject(),
             }}
           />
-           */}
- <Link href="https://near.org/refound_create_success.near/widget/home"><button style={{backgroundColor:"grey", borderColor:"grey", padding:"18px 28px"}}>Cancel</button></Link>
-
         </div>
         <div className="col">
           <Widget
