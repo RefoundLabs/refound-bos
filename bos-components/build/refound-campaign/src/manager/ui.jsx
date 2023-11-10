@@ -185,6 +185,8 @@ const NavTab = styled.a`
   }
 `;
 
+const IT = "nearui.near/widget/Input.ExperimentalText";
+
 // projects = null;
 return (
   <>
@@ -205,7 +207,7 @@ return (
         
         </Nav>
       </div>
-      <div className="text-start row">
+      <div className="text-start row"  style={{marginTop:'5%'}}>
         <div className="col w-50">
           <h3>Fund my reporting campaign in</h3>
           <h3 style={{ color: "#A2733B" }}>Eastern Europe</h3>
@@ -221,14 +223,28 @@ return (
           <div style={{padding:"5%"}}></div>
           {/* <h3>Related Post</h3>
           <Widget src={`refound_app.near/widget/card`} props={{"title":"Test", "description":"Test", "media":""}}} /> */}
+
+        <Widget
+        src={IT}
+        props={{
+          label: "Donate to this Cause",
+          placeholder: "Amount in NEAR",
+          inputProps: {
+            defaultValue: state.project.location,
+          },
+          onChange: (v) => updateP("location", v),
+        }}
+      />
+      <button style={{backgroundColor:"#A2733B", borderColor:"#A2733B"}}>Donate</button>
         </div>
         
         <div className="col w-50">
           <img
             src="https://bafybeibfzyfyudqfn6equrqbscrdizhki6lzyhqeq7pqpwxczjcrp47lfe.ipfs.w3s.link/campaignImage.png"
-            style={{ borderRadius: "84px", width: "60%", height: auto }}
+            style={{ borderRadius: "84px", width: "60%", marginLeft:"30%", height: auto }}
           ></img>
         </div>
       </div>
+     
   </>
 );
